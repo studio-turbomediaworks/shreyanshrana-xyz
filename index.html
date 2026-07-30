@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Shreyansh Rana — coming soon</title>
+<meta name="description" content="Founder of Turbo Mediaworks. Building a creative studio at 19. Full site arriving soon.">
+<link rel="canonical" href="https://shreyanshrana.xyz">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shreyansh Rana — coming soon">
+<meta property="og:description" content="Founder of Turbo Mediaworks. Building a creative studio at 19. Full site arriving soon.">
+<meta property="og:url" content="https://shreyanshrana.xyz">
+<meta property="og:image" content="https://shreyanshrana.xyz/bg-desktop.jpg">
+<meta property="og:image:width" content="1659">
+<meta property="og:image:height" content="948">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shreyansh Rana — coming soon">
+<meta name="twitter:description" content="Founder of Turbo Mediaworks. Building a creative studio at 19. Full site arriving soon.">
+<meta name="twitter:image" content="https://shreyanshrana.xyz/bg-desktop.jpg">
+
+<meta name="theme-color" content="#000000">
+
+<!-- Favicon: white SR on black -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%23000'/%3E%3Ctext%20x='32'%20y='44'%20font-family='Helvetica,Arial,sans-serif'%20font-size='30'%20font-weight='700'%20letter-spacing='1'%20fill='%23fff'%20text-anchor='middle'%3ESR%3C/text%3E%3C/svg%3E">
+
+<!-- Preload only the image this viewport will actually use -->
+<link rel="preload" as="image" href="bg-desktop.jpg" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="bg-mobile.jpg"  media="(max-width: 860px)" fetchpriority="high">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --edge: clamp(24px, 4vw, 56px);   /* uniform page inset */
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{ height:100%; }
+
+  /* The baked composite is the entire visual — no filters, no overlays on it */
+  body{
+    min-height:100dvh;
+    background:#000 url("bg-desktop.jpg") center center / cover no-repeat fixed;
+    color:#fff;
+    font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow:hidden;
+  }
+
+  /* Page frame: name / center block / social bar on one vertical rhythm */
+  .frame{
+    position:relative;
+    z-index:2;
+    min-height:100dvh;
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    align-items:center;
+    justify-items:center;
+    text-align:center;
+    padding:
+      calc(var(--edge) + env(safe-area-inset-top))
+      var(--edge)
+      calc(var(--edge) + env(safe-area-inset-bottom));
+  }
+
+  /* Soft scrim behind the centre type only — keeps white type at AA
+     without touching the exported photo's overall exposure */
+  .scrim{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:radial-gradient(ellipse 58% 34% at 50% 50%,
+      rgba(0,0,0,0.42) 0%,
+      rgba(0,0,0,0.18) 45%,
+      rgba(0,0,0,0) 72%);
+  }
+
+  /* 1 — name, top */
+  .topname{
+    grid-row:1;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.75);
+    padding-left:0.35em;      /* optical centring against the tracking */
+    white-space:nowrap;
+  }
+
+  /* 2 — centre block */
+  .center{ grid-row:2; }
+
+  h1{
+    font-weight:600;
+    font-size:clamp(40px, 6vw, 84px);
+    line-height:1;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:#fff;
+    padding-left:0.12em;
+    text-shadow:0 2px 44px rgba(0,0,0,0.55);
+  }
+
+  .subtext{
+    margin-top:clamp(18px, 2.2vh, 26px);
+    font-size:16px;
+    font-weight:400;
+    letter-spacing:0.01em;
+    color:rgba(255,255,255,0.70);
+    text-shadow:0 1px 26px rgba(0,0,0,0.5);
+  }
+
+  .meta{
+    margin-top:12px;
+    font-size:13px;
+    font-weight:400;
+    letter-spacing:0.02em;
+    color:rgba(255,255,255,0.50);
+    text-shadow:0 1px 20px rgba(0,0,0,0.5);
+  }
+
+  /* 3 — social bar, bottom */
+  .social{
+    grid-row:3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    max-width:100%;
+  }
+
+  .links{ display:flex; align-items:center; }
+
+  .links a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 18px;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.30em;
+    text-transform:uppercase;
+    text-decoration:none;
+    white-space:nowrap;
+    color:rgba(255,255,255,0.60);
+    text-shadow:0 1px 18px rgba(0,0,0,0.6);
+    transition:color .25s var(--ease), letter-spacing .25s var(--ease);
+  }
+  .links a:hover,
+  .links a:focus-visible{ color:#fff; letter-spacing:0.38em; }
+  .links a:focus-visible{
+    outline:1px solid rgba(255,255,255,0.7);
+    outline-offset:4px;
+    border-radius:2px;
+  }
+
+  .rule{
+    width:1px; height:16px;
+    background:rgba(255,255,255,0.20);
+    flex:0 0 auto;
+  }
+
+  .copyright{
+    font-size:11px;
+    letter-spacing:0.04em;
+    color:rgba(255,255,255,0.40);
+    text-shadow:0 1px 18px rgba(0,0,0,0.6);
+  }
+
+  /* ---- Entrance: name, H1, subtext, meta, socials ---- */
+  .reveal{
+    opacity:0;
+    transform:translateY(12px);
+    animation:rise .6s var(--ease) forwards;
+    animation-delay:var(--d, 0ms);
+  }
+  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ animation:none; opacity:1; transform:none; }
+    .links a{ transition:color .25s var(--ease); }
+  }
+
+  /* ---- Portrait / mobile: swap to the vertical composite ---- */
+  @media (max-width: 860px){
+    body{
+      background-image:url("bg-mobile.jpg");
+      background-attachment:scroll;   /* fixed is unreliable on iOS */
+    }
+    h1{ letter-spacing:0.10em; padding-left:0.10em; }
+    .subtext{ font-size:15px; }
+    .links a{ padding:0 13px; letter-spacing:0.24em; }
+    .links a:hover,
+    .links a:focus-visible{ letter-spacing:0.30em; }
+  }
+
+  /* Very narrow: let the links breathe rather than overflow */
+  @media (max-width: 400px){
+    .links a{ padding:0 10px; font-size:11px; letter-spacing:0.20em; }
+    .links a:hover,
+    .links a:focus-visible{ letter-spacing:0.26em; }
+  }
+
+  /* Short landscape (phones turned sideways): tighten vertical rhythm */
+  @media (max-height: 520px){
+    :root{ --edge: 20px; }
+    h1{ font-size:clamp(30px, 7vh, 52px); }
+    .subtext{ margin-top:12px; font-size:14px; }
+    .meta{ margin-top:8px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="scrim" aria-hidden="true"></div>
+
+  <div class="frame">
+
+    <p class="topname reveal" style="--d:0ms">Shreyansh Rana</p>
+
+    <main class="center">
+      <h1 class="reveal" style="--d:80ms">Coming Soon</h1>
+      <p class="subtext reveal" style="--d:160ms">Filmed while it&rsquo;s still uncertain.</p>
+      <p class="meta reveal" style="--d:240ms">Building a creative studio · 19</p>
+    </main>
+
+    <div class="social reveal" style="--d:320ms">
+      <nav class="links" aria-label="Social links">
+        <a href="https://www.youtube.com/@ShreyanshRana" target="_blank" rel="noopener">YouTube</a>
+        <span class="rule" aria-hidden="true"></span>
+        <a href="https://www.instagram.com/shreyanshrana06" target="_blank" rel="noopener">Instagram</a>
+        <span class="rule" aria-hidden="true"></span>
+        <a href="https://www.linkedin.com/in/shreyansh-rana-8b42ab250" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="copyright">© 2026 · full site arriving soon</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
