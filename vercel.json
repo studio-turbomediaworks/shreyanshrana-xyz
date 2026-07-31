@@ -3,7 +3,7 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "(?<sub>.*)\\.vercel\\.app" }],
+      "has": [{ "type": "host", "value": "shreyanshrana-xyz.vercel.app" }],
       "destination": "https://shreyanshrana.xyz/:path*",
       "permanent": true
     }
