@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "missing": [{ "type": "host", "value": "shreyanshrana.xyz" }],
+      "destination": "https://shreyanshrana.xyz/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.(jpg|jpeg|png|svg|ico|webp)",
