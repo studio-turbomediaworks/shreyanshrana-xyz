@@ -2,9 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "shreyanshrana-xyz.vercel.app" }],
-      "destination": "https://shreyanshrana.xyz/:path*",
+      "destination": "https://shreyanshrana.xyz/$1",
       "permanent": true
     }
   ],
